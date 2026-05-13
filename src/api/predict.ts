@@ -1,5 +1,5 @@
 export const predictAssessment = async (formData: any) => {
-  const response = await fetch("https://circai.onrender.com/predict", {
+  const response = await fetch("https://circai-2.onrender.com/predict", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

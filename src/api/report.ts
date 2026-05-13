@@ -1,7 +1,7 @@
 export const downloadReport = async (formData: any) => {
 
   const response = await fetch(
-    "https://circai.onrender.com/generate-report",
+    "https://circai-2.onrender.com/generate-report",
     {
       method: "POST",
       headers: {
