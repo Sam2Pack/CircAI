@@ -1,6 +1,7 @@
 import pandas as pd
 import joblib
 
+import os
 from sklearn.model_selection import train_test_split
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
@@ -123,6 +124,7 @@ grade_model = Pipeline([
 
 grade_model.fit(X_train, yg_train)
 
+os.makedirs('models', exist_ok=True)
 # SAVE MODELS
 joblib.dump(carbon_model, 'models/carbon_model.pkl')
 joblib.dump(circularity_model, 'models/circularity_model.pkl')
