@@ -37,17 +37,39 @@ import {
 
 const Results = () => {
 
-  const location = useLocation();
+const location = useLocation();
 
-  const prediction = location.state?.prediction;
-
+const prediction = location.state?.prediction;
 const formData = location.state?.formData;
+
+if (!prediction) {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="text-center space-y-4">
+        <h1 className="text-3xl font-bold">
+          No Assessment Data Found
+        </h1>
+
+        <p className="text-muted-foreground">
+          Please run a lifecycle assessment first.
+        </p>
+
+        <Link
+          to="/assessment"
+          className="text-primary underline"
+        >
+          Go to Assessment
+        </Link>
+      </div>
+    </div>
+  );
+}
 
 const {
   carbon_footprint,
   circularity_score,
   sustainability_grade
-} = prediction || {};
+} = prediction;
 
   // BAR CHART DATA
   const carbonData = [
