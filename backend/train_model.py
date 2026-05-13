@@ -95,7 +95,7 @@ _, _, yg_train, yg_test = train_test_split(
 carbon_model = Pipeline([
     ('preprocessor', preprocessor),
     ('model', RandomForestRegressor(
-        n_estimators=20,
+        n_estimators=10,
         random_state=42
     ))
 ])
@@ -106,7 +106,7 @@ carbon_model.fit(X_train, yc_train)
 circularity_model = Pipeline([
     ('preprocessor', preprocessor),
     ('model', RandomForestRegressor(
-        n_estimators=20,
+        n_estimators=10,
         random_state=42
     ))
 ])
@@ -117,7 +117,7 @@ circularity_model.fit(X_train, ycir_train)
 grade_model = Pipeline([
     ('preprocessor', preprocessor),
     ('model', RandomForestClassifier(
-        n_estimators=20,
+        n_estimators=10,
         random_state=42
     ))
 ])
